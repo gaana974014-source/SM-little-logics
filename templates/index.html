@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROCK PAPER SCISSOR | Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎮 ROCK PAPER SCISSOR Game</h1>
+
+    <div class="score">
+        <h2>👩 You: {{ user_score }}</h2>
+        <h2>💻 Computer: {{ computer_score }}</h2>
+    </div>
+
+    <form method="POST">
+        <button class="rock" name="choice" value="rock">🪨 Rock</button>
+        <button class="paper" name="choice" value="paper">📄 Paper</button>
+        <button class="scissors" name="choice" value="scissors">✂ Scissors</button>
+    </form>
+
+    <form method="POST">
+        <button class="restart" name="restart" value="yes">🔄 Restart Game</button>
+    </form>
+
+    {% if computer_choice %}
+    <div class="result">
+        <h3>Computer chose: {{ computer_choice }}</h3>
+        <h1>{{ result }}</h1>
+    </div>
+    {% endif %}
+
+    <!-- 🎉 Winning Celebration -->
+    {% if winner %}
+    <div class="celebration">
+        🎉 {{ winner }} Wins the Game! 🎉
+        <p>Restarting...</p>
+    </div>
+
+    <script>
+        setTimeout(function(){
+            window.location.href = "/game";
+        }, 3000);
+    </script>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

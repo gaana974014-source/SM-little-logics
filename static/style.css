@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 20px 0;
+}
+
+.score h2 {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+.rock {
+    background-color: #ff6b6b;
+}
+
+.paper {
+    background-color: #1dd1a1;
+}
+
+.scissors {
+    background-color: #feca57;
+}
+
+.restart {
+    background-color: #ff4757;
+    margin-top: 20px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 22px;
+}
+.celebration {
+    margin-top: 30px;
+    font-size: 30px;
+    color: yellow;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
